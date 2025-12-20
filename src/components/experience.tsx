@@ -5,7 +5,7 @@ import { experience } from "@/data/experience";
 export default function Experience() {
   return (
     <section className="border-b border-(--border) box-border min-h-[50vh]">
-      <div className="flex flex-col justify-center items-start space-y-6 py-8 px-5 xl:px-40 xl:py-30">
+      <div className="flex flex-col justify-center items-start space-y-6 py-8 px-5 sm:py-10 sm:px-8 md:py-12 md:px-12 lg:py-20 lg:px-20 xl:py-30 xl:px-40">
         <h1 className="font-bold font-plex text-4xl md:text-5xl text-white">
           Experience
         </h1>

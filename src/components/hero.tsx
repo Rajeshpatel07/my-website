@@ -12,7 +12,7 @@ import { Docker } from "./ui/technologies/docker";
 export default function Hero() {
   return (
     <section className="border-b border-(--border) box-border">
-      <div className="flex flex-col justify-center items-start space-y-4 py-8 px-5 xl:p-40">
+      <div className="flex flex-col justify-center items-start space-y-4 py-8 px-5 sm:py-10 sm:px-8 md:py-12 md:px-12 lg:py-20 lg:px-20 xl:py-40 xl:px-40">
         <div
           id="photo"
           className="border rounded-full w-32 h-32 md:w-48 md:h-48 relative"

@@ -1,0 +1,53 @@
+import { skills } from "@/data/skills";
+import Image from "next/image";
+
+export default function Aboutme() {
+  return (
+    <section className="border-b border-(--border) box-border">
+      <div className="flex flex-col justify-center items-start space-y-4 py-8 px-5 sm:py-10 sm:px-8 md:py-12 md:px-12 lg:py-20 lg:px-20 xl:py-40 xl:px-40">
+        <h1 className="font-bold font-plex text-4xl md:text-5xl text-white">
+          About me
+        </h1>
+        <div className="flex flex-col  md:flex-row gap-8 py-4  w-full">
+          <div
+            id="image"
+            className="w-full md:w-2/5 border relative h-64 md:h-auto"
+          >
+            <Image
+              src=""
+              alt="Rajesh Potharam"
+              fill
+              className="object-cover rounded-lg"
+            />
+          </div>
+          <div
+            id="details"
+            className="w-full md:w-3/5 flex flex-col justify-center space-y-4"
+          >
+            <h1 className="font-bold font-plex text-3xl md:text-4xl text-white">
+              Rajesh Potharam
+            </h1>
+            <p className="font-plex text-gray-300 leading-relaxed">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
+              reprehenderit accusamus, voluptates a quam cum cumque impedit,
+              architecto vero eius voluptas autem. Sed voluptas aperiam saepe
+              maxime, modi facilis culpa.
+            </p>
+            <div>
+              <h2 className="font-bold font-plex text-xl md:text-2xl text-white mb-2">
+                Skills
+              </h2>
+              <div id="logos" className="flex flex-wrap gap-3">
+                {skills.map((item) => (
+                  <div className="w-8 h-8" key={item.name}>
+                    <item.logo />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
