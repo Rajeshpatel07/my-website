@@ -6,22 +6,25 @@ import { socials } from "@/data/socials";
 
 export default function Hero() {
   return (
-    <div className="border-b border-(--border) h-4/6">
-      <div className="flex flex-col justify-center items-start space-y-4  px-5 xl:p-40">
-        <div id="photo" className="border rounded-full">
+    <div className="border-b border-(--border) box-border">
+      <div className="flex flex-col justify-center items-start space-y-4 py-8 px-5 xl:p-40">
+        <div
+          id="photo"
+          className="border rounded-full w-32 h-32 md:w-48 md:h-48 relative"
+        >
           <Image
             className=""
             src=""
             alt="photo"
-            width={200}
-            height={200}
+            fill
+            sizes="(max-width: 768px) 128px, 192px"
           ></Image>
         </div>
         <div id="text">
-          <h1 className="inline-block text-5xl font-plex text-[#f2eded]">
+          <h1 className="inline-block text-3xl md:text-5xl font-plex text-[#f2eded]">
             Hi, I'm Rajesh -{" "}
           </h1>
-          <h1 className="inline-block text-5xl font-plex font-bold pl-2">
+          <h1 className="inline-block text-3xl md:text-5xl font-plex font-bold pl-2">
             A Full Stack Developer
           </h1>
         </div>
