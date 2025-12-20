@@ -14,10 +14,10 @@ export default function Experience() {
             <div className="flex flex-col md:flex-row gap-4 items-start md:items-center">
               <div className="">
                 <h2 className="text-white font-plex text-2xl md:text-3xl font-semibold">
-                  Peram Software Solutions
+                  Associate Software Engineer
                 </h2>
                 <h3 className="font-plex text-lg md:text-xl text-gray-300">
-                  Associate Software Engineer
+                  Peram Software Solutions
                 </h3>
               </div>
             </div>

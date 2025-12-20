@@ -1,5 +1,6 @@
 import Aboutme from "@/components/aboutme";
 import Experience from "@/components/experience";
+import GitHubGraph from "@/components/githubgraph";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 
@@ -9,6 +10,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Experience />
+      <GitHubGraph />
       <Aboutme />
     </div>
   );

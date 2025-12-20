@@ -9,15 +9,12 @@ export default function Aboutme() {
           About me
         </h1>
         <div className="flex flex-col  md:flex-row gap-8 py-4  w-full">
-          <div
-            id="image"
-            className="w-full md:w-2/5 border relative h-64 md:h-auto"
-          >
+          <div id="image" className="w-full border relative aspect-square">
             <Image
-              src=""
+              src="/profile.png"
               alt="Rajesh Potharam"
               fill
-              className="object-cover rounded-lg"
+              className="object-cover object-top rounded-lg"
             />
           </div>
           <div

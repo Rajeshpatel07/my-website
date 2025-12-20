@@ -15,14 +15,13 @@ export default function Hero() {
       <div className="flex flex-col justify-center items-start space-y-4 py-8 px-5 sm:py-10 sm:px-8 md:py-12 md:px-12 lg:py-20 lg:px-20 xl:py-40 xl:px-40">
         <div
           id="photo"
-          className="border rounded-full w-32 h-32 md:w-48 md:h-48 relative"
+          className="border overflow-hidden rounded-full w-32 h-32 md:w-60 md:h-60 relative "
         >
           <Image
-            className=""
-            src=""
+            className="object-cover "
+            src="/profile.png"
             alt="photo"
             fill
-            sizes="(max-width: 768px) 128px, 192px"
           ></Image>
         </div>
         <div id="text">
@@ -41,35 +40,35 @@ export default function Hero() {
               <div className="h-6 w-6">
                 <TypeScript height="25" width="25" />
               </div>
-              <p className="text-white font-semibold">{"Typescript"}</p>
+              <p className="text-white font-semibold text-lg">{"Typescript"}</p>
             </Badge>
             ,
             <Badge>
               <div className="h-6 w-6">
                 <ReactIcon />
               </div>
-              <p className="text-white font-semibold">{"Reactjs"}</p>
+              <p className="text-white font-semibold  text-lg">{"Reactjs"}</p>
             </Badge>
             and
             <Badge>
               <div className="h-6 w-6">
                 <Nextjs />
               </div>
-              <p className="text-white font-semibold">{"Nextjs"}</p>
+              <p className="text-white font-semibold text-lg">{"Nextjs"}</p>
             </Badge>
             Leveraging a deep foundation in
             <Badge>
               <div className="h-6 w-6">
                 <Cpp />
               </div>
-              <p className="text-white font-semibold">{"C++"}</p>
+              <p className="text-white font-semibold text-lg">{"C++"}</p>
             </Badge>
             and
             <Badge>
               <div className="h-6 w-6">
                 <Docker />
               </div>
-              <p className="text-white font-semibold">{"Docker"}</p>
+              <p className="text-white font-semibold text-lg">{"Docker"}</p>
             </Badge>
             to deliver high-performance solutions from backend to deployment.
           </p>
@@ -86,7 +85,7 @@ export default function Hero() {
           <ul className="flex items-center gap-3">
             {socials.map((item) => (
               <li key={item.name}>
-                <Link href={item.url}>
+                <Link href={item.url} target="_blank">
                   <item.logo height="30" width="30" className="text-white" />
                 </Link>
               </li>
