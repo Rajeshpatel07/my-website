@@ -1,29 +1,47 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+import { useEffect, useState } from "react";
 import { GitHubCalendar } from "react-github-calendar";
-import Typescript from "./ui/technologies/typescript";
-import Badge from "./ui/badge";
-import Nodejs from "./ui/technologies/nodejs";
-import Bun from "./ui/technologies/bun";
 import OpenSource from "./opensource";
 
 export default function GitHubGraph() {
+  const [daysToRender, setDaysToRender] = useState(150);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 1024) {
+        setDaysToRender(150);
+      } else {
+        setDaysToRender(365);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <section className="border-b border-(--border) box-border py-8 px-5 sm:py-10 sm:px-8 md:py-12 md:px-12 lg:py-20 lg:px-20 xl:py-40 xl:px-40">
-      {/* Open Source Contributions */}
       <OpenSource />
-      <div className="pt-12">
-        <h1 className="font-bold font-plex text-4xl md:text-5xl text-white mb-8">
-          GitHub Activity
-        </h1>
-        <div id="graph-container" className="w-full overflow-x-auto mb-12">
-          <GitHubCalendar
-            username="Rajeshpatel07"
-            blockSize={12}
-            blockMargin={4}
-            fontSize={14}
-          />
-        </div>
+      <div
+        id="graph-container"
+        className="flex w-full mb-12 justify-center overflow-auto lg:justify-start"
+      >
+        <GitHubCalendar
+          username="Rajeshpatel07"
+          blockSize={12}
+          blockMargin={4}
+          fontSize={14}
+          transformData={(contributions) => {
+            return contributions.slice(-daysToRender);
+          }}
+          style={{
+            maxWidth: "100%",
+            overflow: "hidden",
+          }}
+        />
       </div>
     </section>
   );

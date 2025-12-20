@@ -1,9 +1,9 @@
 import ExpressJs from "@/components/ui/technologies/expressjs";
 import NodeJs from "@/components/ui/technologies/nodejs";
+import ReactIcon from "@/components/ui/technologies/reacticon";
 import SocketIo from "@/components/ui/technologies/socketio";
 import TypeScript from "@/components/ui/technologies/typescript";
 import { Webrtc } from "@/components/ui/technologies/webrtc";
-import ReactIcon from "@/components/ui/technologies/reacticon";
 
 export const experience = {
   tools: [

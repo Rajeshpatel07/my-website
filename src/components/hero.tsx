@@ -1,13 +1,12 @@
-import Link from "next/link";
 import Image from "next/image";
-import Badge from "./ui/badge";
-import { languages } from "@/data/Data";
+import Link from "next/link";
 import { socials } from "@/data/socials";
-import TypeScript from "./ui/technologies/typescript";
-import ReactIcon from "./ui/technologies/reacticon";
-import Nextjs from "./ui/technologies/nextjs";
+import Badge from "./ui/badge";
 import { Cpp } from "./ui/technologies/cpp";
 import { Docker } from "./ui/technologies/docker";
+import Nextjs from "./ui/technologies/nextjs";
+import ReactIcon from "./ui/technologies/reacticon";
+import TypeScript from "./ui/technologies/typescript";
 
 export default function Hero() {
   return (

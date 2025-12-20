@@ -1,6 +1,5 @@
-import Image from "next/image";
-import Badge from "./ui/badge";
 import { experience } from "@/data/experience";
+import Badge from "./ui/badge";
 
 export default function Experience() {
   return (

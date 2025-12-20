@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { GitHubCalendar } from "react-github-calendar";
-import Typescript from "./ui/technologies/typescript";
 import Badge from "./ui/badge";
-import Nodejs from "./ui/technologies/nodejs";
 import Bun from "./ui/technologies/bun";
+import Nodejs from "./ui/technologies/nodejs";
+import Typescript from "./ui/technologies/typescript";
 
 export default function OpenSource() {
   return (

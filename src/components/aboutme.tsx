@@ -1,5 +1,5 @@
-import { skills } from "@/data/skills";
 import Image from "next/image";
+import { skills } from "@/data/skills";
 
 export default function Aboutme() {
   return (
@@ -25,10 +25,9 @@ export default function Aboutme() {
               Rajesh Potharam
             </h1>
             <p className="font-plex text-gray-300 leading-relaxed">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
-              reprehenderit accusamus, voluptates a quam cum cumque impedit,
-              architecto vero eius voluptas autem. Sed voluptas aperiam saepe
-              maxime, modi facilis culpa.
+              I'm a software engineer with a lot of skill issues. Trying to get
+              out of my imposter syndrome. If you are anything like me let
+              connect.
             </p>
             <div>
               <h2 className="font-bold font-plex text-xl md:text-2xl text-white mb-2">
