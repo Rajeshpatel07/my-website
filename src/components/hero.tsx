@@ -3,10 +3,15 @@ import Image from "next/image";
 import Badge from "./ui/badge";
 import { languages } from "@/data/Data";
 import { socials } from "@/data/socials";
+import TypeScript from "./ui/technologies/typescript";
+import ReactIcon from "./ui/technologies/reacticon";
+import Nextjs from "./ui/technologies/nextjs";
+import { Cpp } from "./ui/technologies/cpp";
+import { Docker } from "./ui/technologies/docker";
 
 export default function Hero() {
   return (
-    <div className="border-b border-(--border) box-border">
+    <section className="border-b border-(--border) box-border">
       <div className="flex flex-col justify-center items-start space-y-4 py-8 px-5 xl:p-40">
         <div
           id="photo"
@@ -29,17 +34,45 @@ export default function Hero() {
           </h1>
         </div>
         <div id="description" className="font-semibold">
-          <span className="inline-flex text-xl items-center flex-wrap leading-10">
+          <p className="inline-flex text-xl items-center flex-wrap leading-10">
             Full-stack Engineer specializing in building scalable products with
-            <Badge name="Typescript" imageUrl={languages.typescript} />,
-            <Badge name="Reactjs" imageUrl={languages.reactjs} /> and
-            <Badge name="Nextjs" imageUrl={languages.nextjs} />. Leveraging a
-            deep foundation in
-            <Badge name="C++" imageUrl={languages.cpp} />
+            <Badge>
+              {/* NOTE: add this div to every badge*/}
+              <div className="h-6 w-6">
+                <TypeScript height="25" width="25" />
+              </div>
+              <p className="text-white font-semibold">{"Typescript"}</p>
+            </Badge>
+            ,
+            <Badge>
+              <div className="h-6 w-6">
+                <ReactIcon />
+              </div>
+              <p className="text-white font-semibold">{"Reactjs"}</p>
+            </Badge>
             and
-            <Badge name="Docker" imageUrl={languages.docker} />
+            <Badge>
+              <div className="h-6 w-6">
+                <Nextjs />
+              </div>
+              <p className="text-white font-semibold">{"Nextjs"}</p>
+            </Badge>
+            Leveraging a deep foundation in
+            <Badge>
+              <div className="h-6 w-6">
+                <Cpp />
+              </div>
+              <p className="text-white font-semibold">{"C++"}</p>
+            </Badge>
+            and
+            <Badge>
+              <div className="h-6 w-6">
+                <Docker />
+              </div>
+              <p className="text-white font-semibold">{"Docker"}</p>
+            </Badge>
             to deliver high-performance solutions from backend to deployment.
-          </span>
+          </p>
         </div>
         <div id="resume" className="py-5">
           <Link
@@ -49,14 +82,18 @@ export default function Hero() {
             Resume
           </Link>
         </div>
-        <div id="socials" className="flex items-center gap-3">
-          {socials.map((item) => (
-            <Link href={item.url} key={item.name}>
-              <item.logo height="30" width="30" className="text-white" />
-            </Link>
-          ))}
-        </div>
+        <nav id="socials" className="flex items-center gap-3">
+          <ul className="flex items-center gap-3">
+            {socials.map((item) => (
+              <li key={item.name}>
+                <Link href={item.url}>
+                  <item.logo height="30" width="30" className="text-white" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
-    </div>
+    </section>
   );
 }

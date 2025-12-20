@@ -12,4 +12,6 @@ export const languages = {
   cpp: "https://img.icons8.com/?size=100&id=40669&format=png&color=000000",
   docker:
     "https://img.icons8.com/?size=100&id=cdYUlRaag9G9&format=png&color=000000",
+  expressjs:
+    "https://img.icons8.com/?size=100&id=kg46nzoJrmTR&format=png&color=000000",
 };
