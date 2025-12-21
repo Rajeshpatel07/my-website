@@ -21,7 +21,8 @@ export default function ProjectCard({
   project: ProjectCardProps;
 }) {
   return (
-    <article
+    <Link
+      href={project.link}
       className={`border rounded-md overflow-hidden hover:shadow-lg transition-shadow  "border-gray-700 bg-gray-900/20"`}
     >
       <div id="image" className="relative aspect-[10/6]">
@@ -67,6 +68,6 @@ export default function ProjectCard({
           </div>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }

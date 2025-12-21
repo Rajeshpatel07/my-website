@@ -1,4 +1,3 @@
-import { Codeforces } from "@/components/ui/svgs/codeforces";
 import { Github } from "@/components/ui/svgs/github";
 import { Leetcode } from "@/components/ui/svgs/leetcode";
 import { LinkedinRect } from "@/components/ui/svgs/linkedin";
@@ -26,11 +25,5 @@ export const socials = [
 
     logo: Leetcode,
     url: "https://leetcode.com/u/Rajesh_cz07",
-  },
-  {
-    name: "Codeforces",
-
-    logo: Codeforces,
-    url: "https://codeforces.com/profile/Rajesh_Patel",
   },
 ];
