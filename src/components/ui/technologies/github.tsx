@@ -3,6 +3,7 @@ import type { SVGProps } from "react";
 export default function Github(props: SVGProps<SVGSVGElement>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" {...props}>
+      <title>Github</title>
       <g fill="#181616">
         <path
           fillRule="evenodd"
