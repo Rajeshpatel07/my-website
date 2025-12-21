@@ -17,7 +17,7 @@ export default function Hero() {
           className="border overflow-hidden rounded-full w-32 h-32 md:w-60 md:h-60 relative "
         >
           <Image
-            className="object-cover "
+            className="object-cover object-top"
             src="/profile.png"
             alt="photo"
             fill
@@ -32,7 +32,7 @@ export default function Hero() {
           </h1>
         </div>
         <div id="description" className="font-semibold">
-          <p className="inline-flex text-xl items-center flex-wrap leading-10">
+          <span className="inline-flex text-xl items-center flex-wrap leading-10">
             Full-stack Engineer specializing in building scalable products with
             <Badge>
               {/* NOTE: add this div to every badge*/}
@@ -70,7 +70,7 @@ export default function Hero() {
               <p className="text-white font-semibold text-lg">{"Docker"}</p>
             </Badge>
             to deliver high-performance solutions from backend to deployment.
-          </p>
+          </span>
         </div>
         <div id="resume" className="py-5">
           <Link
