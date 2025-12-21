@@ -43,9 +43,6 @@ export default function Experience() {
             </div>
           </div>
           <div className="mt-6">
-            <h4 className="font-plex text-xl md:text-2xl text-white font-semibold mb-4">
-              Key Responsibilities
-            </h4>
             <ul className="list-disc list-inside space-y-2 text-gray-300 font-plex">
               {experience.work.map((item) => (
                 <li key={item} className="leading-relaxed">

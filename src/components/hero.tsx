@@ -24,14 +24,14 @@ export default function Hero() {
           ></Image>
         </div>
         <div id="text">
-          <h1 className="inline-block text-3xl md:text-5xl font-plex text-[#f2eded]">
+          <h1 className="inline-block text-3xl md:text-5xl font-plex font-bold text-[#f2eded]">
             Hi, I'm Rajesh -{" "}
           </h1>
-          <h1 className="inline-block text-3xl md:text-5xl font-plex font-bold pl-2">
+          <h1 className="inline-block text-3xl md:text-5xl font-plex font-semibold pl-2">
             A Full Stack Developer
           </h1>
         </div>
-        <div id="description" className="font-semibold">
+        <div id="description" className="font-semibold font-plex">
           <span className="inline-flex text-xl items-center flex-wrap leading-10">
             Full-stack Engineer specializing in building scalable products with
             <Badge>

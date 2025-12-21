@@ -1,4 +1,5 @@
 import ExpressJs from "@/components/ui/technologies/expressjs";
+import { MediasoupIcon } from "@/components/ui/technologies/mediasoup";
 import NodeJs from "@/components/ui/technologies/nodejs";
 import ReactIcon from "@/components/ui/technologies/reacticon";
 import SocketIo from "@/components/ui/technologies/socketio";
@@ -33,12 +34,12 @@ export const experience = {
     },
     {
       name: "Mediasoup",
-      logo: Webrtc,
+      logo: MediasoupIcon,
     },
   ],
   work: [
-    "Developed a robust and efficient group video conferencing solution leveraging TypeScript, Node.js, Mediasoup and WebSockets capable of accommodating 50+ concurrent users per session.",
-    "Architected and implemented the frontend for a Platform as a Service (PaaS) application using React,TypeScript, TanStack and Tailwind CSS enhancing user experience.",
-    "Collaborated with the Flutter team to seamlessly integrate video calling functionalities into the mobile application, ensuring cross-platform consistency.",
+    "Worked on a group video calling app that supports 50+ active users using Node.js and Mediasoup.",
+    "Developed the frontend for a PaaS platform using React, TypeScript, and Tailwind CSS.",
+    "Worked with the mobile team to add video calling features to a Flutter application.",
   ],
 };

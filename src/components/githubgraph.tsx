@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { GitHubCalendar } from "react-github-calendar";
 import OpenSource from "./opensource";
 

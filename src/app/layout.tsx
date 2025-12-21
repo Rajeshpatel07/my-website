@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono } from "next/font/google";
+import { Hanken_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
 const ibmPlexMono = IBM_Plex_Mono({
@@ -7,9 +7,17 @@ const ibmPlexMono = IBM_Plex_Mono({
   variable: "--font-ibm-plex-mono",
 });
 
+const hankenGrotesk = Hanken_Grotesk({
+  weight: "600",
+  variable: "--font-henken-grotesk",
+});
+
 export const metadata: Metadata = {
   title: "Rajesh",
   description: "Portfolio of Rajesh Potharam",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -19,7 +27,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${ibmPlexMono.variable} antialiased`}>{children}</body>
+      <body
+        className={`${hankenGrotesk.variable} ${ibmPlexMono.variable} antialiased`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

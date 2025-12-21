@@ -4,7 +4,7 @@ import { Github } from "./ui/svgs/github";
 
 export default function Header() {
   return (
-    <div className="border-b border-(--border) py-1 px-6 md:py-4 md:px-15">
+    <div className="sticky top-0 z-50 border-b border-(--border) py-1 px-6 md:py-4 md:px-15 bg-(--background)">
       <div className="flex items-center justify-between">
         <div>
           <Image src="/logo.png" alt="logo" width={200} height={200} />
