@@ -21,24 +21,25 @@ export default function ProjectCard({
   project: ProjectCardProps;
 }) {
   return (
-    <Link
-      href={project.link}
+    <article
       className={`border rounded-md overflow-hidden hover:shadow-lg transition-shadow  "border-gray-700 bg-gray-900/20"`}
     >
-      <div id="image" className="relative aspect-[10/6]">
-        <Image
-          src={project.image}
-          alt={project.name}
-          fill
-          className="object-cover object-center p-x-2"
-        />
-        {project.inPorcess && (
-          <div className="absolute top-5 left-4 flex items-center gap-2 bg-black/70 px-2 py-1 rounded-md">
-            <div className="h-3 w-3 rounded-full bg-red-500 animate-pulse"></div>
-            <p className="text-white text-md font-semibold">In Progress</p>
-          </div>
-        )}
-      </div>
+      <Link href={project.link}>
+        <div className="relative aspect-[10/6]">
+          <Image
+            src={project.image}
+            alt={project.name}
+            fill
+            className="object-cover object-center p-x-2"
+          />
+          {project.inPorcess && (
+            <div className="absolute top-5 left-4 flex items-center gap-2 bg-black/70 px-2 py-1 rounded-md">
+              <div className="h-3 w-3 rounded-full bg-red-500 animate-pulse"></div>
+              <p className="text-white text-md font-semibold">In Progress</p>
+            </div>
+          )}
+        </div>
+      </Link>
       <div id="details" className="p-4 space-y-4">
         <div className="flex items-center justify-between">
           <h2 className="font-bold font-plex text-xl md:text-2xl text-white">
@@ -68,6 +69,6 @@ export default function ProjectCard({
           </div>
         </div>
       </div>
-    </Link>
+    </article>
   );
 }

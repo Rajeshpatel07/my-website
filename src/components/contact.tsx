@@ -9,7 +9,7 @@ export default function Contact() {
           {contactinfo.map((info) => (
             <div
               key={info.info}
-              className="border-y border-y-(--border) md:border-x md:border-(--border) h-20 md:h-32 w-full  md:w-1/3 flex items-center justify-center"
+              className="border-y border-y-(--border) md:border-x md:border-(--border) h-20 md:h-32 w-full  md:w-1/2 flex items-center justify-center"
             >
               {info.name === "mail" ? (
                 <Link href={`mailto:${info.info}`}>
