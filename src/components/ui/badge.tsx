@@ -5,8 +5,10 @@ interface BadgeProps {
 }
 export default function Badge({ children }: BadgeProps) {
   return (
-    <div className="border border-dashed border-gray-500 rounded-lg mx-2 bg-gray-900">
-      <div className="flex items-center gap-2 py-1 px-2">{children}</div>
-    </div>
+    <span className="border-[0.05rem] border-dashed border-gray-500 rounded-lg mx-1 bg-gray-900 inline-flex leading-none">
+      <span className="flex items-center gap-2 py-[0.4rem] px-2">
+        {children}
+      </span>
+    </span>
   );
 }

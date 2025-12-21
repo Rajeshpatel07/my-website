@@ -13,10 +13,10 @@ export default function Header() {
           <Link
             href="https://github.com/Rajeshpatel07"
             target="_blank"
-            className="hover:border-b-white hover:border-b flex gap-1 items-center"
+            className=" hover:border-b-white hover:border-b flex gap-1 items-center"
           >
             <Github height="30" width="30" />
-            <p className="hidden md:block">Github</p>
+            <p className="hidden md:block text-xl">Github</p>
           </Link>
         </div>
       </div>

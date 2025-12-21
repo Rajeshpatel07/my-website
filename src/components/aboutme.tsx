@@ -14,7 +14,7 @@ export default function Aboutme() {
               src="/profile.png"
               alt="Rajesh Potharam"
               fill
-              className="object-cover object-top rounded-lg"
+              className="object-cover object-top"
             />
           </div>
           <div

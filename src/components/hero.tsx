@@ -31,50 +31,69 @@ export default function Hero() {
             A Full Stack Developer
           </h1>
         </div>
-        <div id="description" className="font-semibold font-plex">
-          <span className="inline-flex text-xl items-center flex-wrap leading-10">
-            Full-stack Engineer specializing in building scalable products with
-            <Badge>
-              {/* NOTE: add this div to every badge*/}
-              <div className="h-6 w-6">
-                <TypeScript height="25" width="25" />
-              </div>
-              <p className="text-white font-semibold text-lg">{"Typescript"}</p>
-            </Badge>
-            ,
-            <Badge>
-              <div className="h-6 w-6">
-                <ReactIcon />
-              </div>
-              <p className="text-white font-semibold  text-lg">{"Reactjs"}</p>
-            </Badge>
+        <div id="description" className="font-medium font-plex">
+          {/* Changed from <span> to <p> and removed 'flex' classes */}
+          <span className="text-lg leading-[2]">
+            I specialize in building scalable applications with
+            {/* BADGE 1: Typescript */}
+            <span className="inline-flex items-baseline align-middle">
+              <Badge>
+                <span className="h-5 w-5 mr-1">
+                  {" "}
+                  {/* Added mr-1 for spacing between icon/text */}
+                  <TypeScript height="25" width="25" />
+                </span>
+                <span className="text-white font-medium text-sm">
+                  TypeScript
+                </span>
+              </Badge>
+            </span>
+            ,{/* BADGE 2: React */}
+            <span className="inline-flex items-baseline align-middle">
+              <Badge>
+                <span className="h-5 w-6 mr-1">
+                  <ReactIcon />
+                </span>
+                <span className="text-white font-medium text-sm">React.js</span>
+              </Badge>
+            </span>
             and
-            <Badge>
-              <div className="h-6 w-6">
-                <Nextjs />
-              </div>
-              <p className="text-white font-semibold text-lg">{"Nextjs"}</p>
-            </Badge>
+            {/* BADGE 3: Next.js */}
+            <span className="inline-flex items-baseline align-middle">
+              <Badge>
+                <span className="h-5 w-5 mr-1">
+                  <Nextjs />
+                </span>
+                <span className="text-white font-medium text-sm">Next.js</span>
+              </Badge>
+            </span>
             Leveraging a deep foundation in
-            <Badge>
-              <div className="h-6 w-6">
-                <Cpp />
-              </div>
-              <p className="text-white font-semibold text-lg">{"C++"}</p>
-            </Badge>
+            {/* BADGE 4: C++ */}
+            <span className="inline-flex items-baseline align-middle">
+              <Badge>
+                <span className="h-5 w-5 mr-1">
+                  <Cpp />
+                </span>
+                <span className="text-white font-medium text-sm">C++</span>
+              </Badge>
+            </span>
             and
-            <Badge>
-              <div className="h-6 w-6">
-                <Docker />
-              </div>
-              <p className="text-white font-semibold text-lg">{"Docker"}</p>
-            </Badge>
+            {/* BADGE 5: Docker */}
+            <span className="inline-flex items-baseline align-middle">
+              <Badge>
+                <span className="h-5 w-5 mr-1">
+                  <Docker />
+                </span>
+                <span className="text-white font-medium text-sm">Docker</span>
+              </Badge>
+            </span>{" "}
             to deliver high-performance solutions from backend to deployment.
           </span>
         </div>
         <div id="resume" className="py-5">
           <Link
-            href={"#"}
+            href="https://drive.google.com/file/d/1ZGRLI3l3KvhszWKbXr2GFUUoMfUjRl14/view?usp=sharing"
+            target="_blank"
             className="font-bold font-plex text-2xl text-white border border-(--border) rounded-md py-2 px-4 hover:bg-gray-800"
           >
             Resume
