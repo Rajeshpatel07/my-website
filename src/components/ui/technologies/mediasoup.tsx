@@ -3,6 +3,7 @@ import type React from "react";
 export const MediasoupIcon = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" {...props}>
+      <title>Mediasoup</title>
       {/* Outer blue circle */}
       <circle cx="50" cy="50" r="50" fill="#1FAADB" />
 
