@@ -31,7 +31,7 @@ export default function Experience() {
             <h4 className="font-plex text-xl md:text-2xl text-white font-semibold mb-4">
               Technologies & Tools
             </h4>
-            <div className="flex flex-wrap space-x-1 space-y-2">
+            <div className="flex flex-wrap space-x-1 space-y-2 items-center">
               {experience.tools.map((item) => (
                 <Badge key={item.name}>
                   <div className="w-6 h-6">

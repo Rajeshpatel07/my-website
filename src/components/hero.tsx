@@ -57,8 +57,7 @@ export default function Hero() {
                 <span className="text-white font-medium text-sm">React.js</span>
               </Badge>
             </span>
-            and
-            {/* BADGE 3: Next.js */}
+            and{/* BADGE 3: Next.js */}
             <span className="inline-flex items-baseline align-middle">
               <Badge>
                 <span className="h-5 w-5 mr-1">
@@ -67,28 +66,26 @@ export default function Hero() {
                 <span className="text-white font-medium text-sm">Next.js</span>
               </Badge>
             </span>
-            Leveraging a deep foundation in
-            {/* BADGE 4: C++ */}
-            <span className="inline-flex items-baseline align-middle">
-              <Badge>
-                <span className="h-5 w-5 mr-1">
-                  <Cpp />
-                </span>
-                <span className="text-white font-medium text-sm">C++</span>
-              </Badge>
-            </span>
-            and
-            {/* BADGE 5: Docker */}
-            <span className="inline-flex items-baseline align-middle">
-              <Badge>
-                <span className="h-5 w-5 mr-1">
-                  <Docker />
-                </span>
-                <span className="text-white font-medium text-sm">Docker</span>
-              </Badge>
-            </span>{" "}
-            to deliver high-performance solutions from backend to deployment.
           </span>
+          . Currently working on low level systems in
+          {/* BADGE 4: C++ */}
+          <span className="inline-flex items-baseline align-middle">
+            <Badge>
+              <span className="h-5 w-5 mr-1">
+                <Cpp />
+              </span>
+              <span className="text-white font-medium text-sm">C++</span>
+            </Badge>
+          </span>
+          .{/* BADGE 5: Docker */}
+          {/* <span className="inline-flex items-baseline align-middle"> */}
+          {/*   <Badge> */}
+          {/*     <span className="h-5 w-5 mr-1"> */}
+          {/*       <Docker /> */}
+          {/*     </span> */}
+          {/*     <span className="text-white font-medium text-sm">Docker</span> */}
+          {/*   </Badge> */}
+          {/* </span>{" "} */}
         </div>
         <div id="resume" className="py-5">
           <Link
