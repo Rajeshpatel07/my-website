@@ -25,10 +25,8 @@ export default function Aboutme() {
               Rajesh Potharam
             </h1>
             <p className="font-plex text-gray-300 leading-relaxed">
-              A Software Engineer with more "skill issues" than valid syntax.
-              Trying to convince my imposter syndrome that I actually read the
-              documentation. Let's connect if your development process also
-              involves panic and random guessing.
+              I build software where efficiency is priority, whether working on
+              low-level components or managing high-volume traffic.
             </p>
             <div>
               <h2 className="font-bold font-plex text-xl md:text-2xl text-white mb-2">

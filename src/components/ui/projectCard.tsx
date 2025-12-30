@@ -24,7 +24,7 @@ export default function ProjectCard({
     <article
       className={`border rounded-md overflow-hidden hover:shadow-lg transition-shadow  "border-gray-700 bg-gray-900/20"`}
     >
-      <Link href={project.link}>
+      <Link href={project.link} target="_blank">
         <div className="relative aspect-[10/6]">
           <Image
             src={project.image}

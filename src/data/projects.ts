@@ -17,8 +17,8 @@ export const projects = [
     description:
       "A high-performance, zero-dependency key-value store and cache for low-latency and minimal overhead.",
     image: "/coreKV.png",
-    link: "https://github.com/Rajeshpatel07/lowlevel-cpp",
-    inPorcess: true,
+    link: "https://github.com/Rajeshpatel07/corekv",
+    inPorcess: false,
     technologies: [
       {
         name: "C++",
