@@ -20,6 +20,7 @@ export default function Hero() {
             src="/profile.png"
             alt="photo"
             fill
+            sizes="(max-width: 768px) 128px, 240px"
           ></Image>
         </div>
         <div id="text">

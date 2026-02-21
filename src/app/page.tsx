@@ -1,10 +1,15 @@
 import Aboutme from "@/components/aboutme";
 import Contact from "@/components/contact";
-// import Experience from "@/components/experience";
 import GitHubGraph from "@/components/githubgraph";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 import Projects from "@/components/projects";
+
+export const metadata = {
+  title: "Rajesh - Full Stack Developer",
+  description:
+    "Portfolio of Rajesh, a Full Stack Developer specializing in TypeScript, React, and Next.js",
+};
 
 export default function Home() {
   return (

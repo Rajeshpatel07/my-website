@@ -14,6 +14,7 @@ export default function Aboutme() {
               src="/profile.png"
               alt="Rajesh Potharam"
               fill
+              sizes="(max-width: 768px) 100vw, 40vw"
               className="object-cover object-top"
             />
           </div>
