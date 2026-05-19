@@ -28,7 +28,7 @@ export default function Hero() {
             Hi, I'm Rajesh -{" "}
           </h1>
           <h1 className="inline-block text-3xl md:text-5xl font-plex font-semibold pl-2">
-            A Full Stack Developer
+            Full Stack Developer
           </h1>
         </div>
         <div id="description" className="font-medium font-plex">

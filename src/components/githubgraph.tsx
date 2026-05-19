@@ -96,7 +96,7 @@ export default function GitHubGraph() {
     <section className="border-b border-[--border] box-border py-8 px-5 sm:py-10 sm:px-8 md:py-12 md:px-12 lg:py-20 lg:px-20 xl:py-40 xl:px-40">
       <OpenSource />
 
-      <div className="flex w-full mt-12 justify-center lg:justify-start overflow-hidden">
+      <div className="flex w-full mt-8 justify-center lg:justify-start overflow-hidden">
         {loading ? (
           <div className="flex items-center justify-center h-[140px] w-full text-sm text-gray-500 bg-gray-50/50 rounded-lg animate-pulse">
             Loading contribution graph...
