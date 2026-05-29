@@ -1,66 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { type Activity, ActivityCalendar } from "react-activity-calendar";
 import OpenSource from "./opensource";
-
-type ResponsiveConfig = {
-  daysToRender: number;
-  blockSize: number;
-  blockMargin: number;
-  fontSize: number;
-};
-
-type ConfigAction =
-  | { type: "SET_MOBILE" }
-  | { type: "SET_TABLET" }
-  | { type: "SET_DESKTOP" };
-
-const mobileConfig: ResponsiveConfig = {
-  daysToRender: 180,
-  blockSize: 11,
-  blockMargin: 2,
-  fontSize: 12,
-};
-
-const tabletConfig: ResponsiveConfig = {
-  daysToRender: 220,
-  blockSize: 12,
-  blockMargin: 3,
-  fontSize: 14,
-};
-
-const desktopConfig: ResponsiveConfig = {
-  daysToRender: 365,
-  blockSize: 12,
-  blockMargin: 4,
-  fontSize: 14,
-};
-
-function configReducer(
-  _state: ResponsiveConfig,
-  action: ConfigAction,
-): ResponsiveConfig {
-  switch (action.type) {
-    case "SET_MOBILE":
-      return mobileConfig;
-    case "SET_TABLET":
-      return tabletConfig;
-    case "SET_DESKTOP":
-      return desktopConfig;
-  }
-}
-
-function getConfigForWidth(width: number): ConfigAction["type"] {
-  if (width < 640) return "SET_MOBILE";
-  if (width < 1024) return "SET_TABLET";
-  return "SET_DESKTOP";
-}
 
 export default function GitHubGraph() {
   const [fullData, setFullData] = useState<Activity[]>([]);
   const [loading, setLoading] = useState(true);
-  const [config, dispatch] = useReducer(configReducer, desktopConfig);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     async function fetchData() {
@@ -81,17 +28,12 @@ export default function GitHubGraph() {
     fetchData();
   }, []);
 
+  // Ensure scroll container starts scrolled to the right (most recent)
   useEffect(() => {
-    function handleResize() {
-      dispatch({ type: getConfigForWidth(window.innerWidth) });
+    if (!loading && scrollContainerRef.current) {
+      scrollContainerRef.current.scrollLeft = scrollContainerRef.current.scrollWidth;
     }
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const visibleData =
-    fullData.length === 0 ? [] : fullData.slice(-config.daysToRender);
+  }, [loading]);
 
   return (
     <section className="relative border-b border-white/5 bg-transparent">
@@ -110,32 +52,37 @@ export default function GitHubGraph() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          className="flex w-full mt-20 justify-center lg:justify-start overflow-hidden bg-black border border-white/5 p-8 md:p-12 rounded-[2.5rem] shadow-2xl group transition-all duration-500"
+          className="w-full mt-12 md:mt-20 transition-all duration-500"
         >
           {loading ? (
             <div className="flex items-center justify-center h-[160px] w-full text-sm text-white/10 font-bold tracking-widest uppercase animate-pulse">
               Syncing contributions...
             </div>
           ) : (
-            <div className="opacity-100 transition-opacity duration-700">
-              <ActivityCalendar
-                data={visibleData}
-                blockSize={config.blockSize}
-                blockMargin={config.blockMargin}
-                fontSize={config.fontSize}
-                //@ts-expect-error
-                hideTotalCount={true}
-                colorScheme="dark"
-                theme={{
-                  light: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
-                  dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
-                }}
-                style={{
-                  maxWidth: "100%",
-                  width: "fit-content",
-                  backgroundColor: "transparent",
-                }}
-              />
+            <div 
+              ref={scrollContainerRef}
+              className="opacity-100 transition-opacity duration-700 w-full overflow-x-auto pb-4 scrollbar-hide cursor-grab active:cursor-grabbing"
+            >
+              <div className="min-w-max px-2 flex justify-start">
+                <ActivityCalendar
+                  data={fullData}
+                  blockSize={14}
+                  blockMargin={4}
+                  fontSize={14}
+                  //@ts-expect-error
+                  hideTotalCount={true}
+                  colorScheme="dark"
+                  theme={{
+                    light: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
+                    dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
+                  }}
+                  style={{
+                    maxWidth: "100%",
+                    width: "fit-content",
+                    backgroundColor: "transparent",
+                  }}
+                />
+              </div>
             </div>
           )}
         </motion.div>

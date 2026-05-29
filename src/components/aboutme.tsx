@@ -59,7 +59,7 @@ export default function Aboutme() {
               <h4 className="text-sm font-bold uppercase tracking-[0.3em] text-white/20 text-center lg:text-left">
                 Technical Arsenal
               </h4>
-              <div className="grid grid-cols-6 sm:grid-cols-7 md:grid-cols-9 gap-3 lg:gap-4">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-6 md:gap-8">
                 {skills.map((item, index) => (
                   <motion.div
                     key={item.name}
@@ -67,7 +67,7 @@ export default function Aboutme() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.02 }}
-                    className="flex items-center justify-center aspect-square transition-all duration-300 hover:scale-125"
+                    className="flex items-center justify-center transition-all duration-300 hover:scale-125"
                     title={item.name}
                   >
                     <TechIcon

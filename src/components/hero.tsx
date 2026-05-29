@@ -139,7 +139,7 @@ export default function Hero() {
                     target="_blank"
                     className="text-white/30 hover:text-white transition-all duration-300 hover:scale-110"
                   >
-                    <social.logo className="w-6 h-6" />
+                    <social.logo className="w-6 h-6 md:w-7 md:h-7" />
                   </Link>
                 </li>
               ))}
