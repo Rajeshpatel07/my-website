@@ -1,7 +1,9 @@
+"use client";
+import { Github } from "./svgs/github";
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import type { JSX, SVGProps } from "react";
-import { Github } from "./svgs/github";
+import TechIcon from "./tech-icon";
 
 interface ProjectCardProps {
   name: string;
@@ -9,10 +11,7 @@ interface ProjectCardProps {
   image: string;
   link: string;
   inPorcess: boolean;
-  technologies: {
-    name: string;
-    logo: (props: SVGProps<SVGSVGElement>) => JSX.Element;
-  }[];
+  technologies: string[];
 }
 
 export default function ProjectCard({
@@ -21,50 +20,54 @@ export default function ProjectCard({
   project: ProjectCardProps;
 }) {
   return (
-    <article
-      className={`border rounded-md overflow-hidden hover:shadow-lg transition-shadow  "border-gray-700 bg-gray-900/20"`}
-    >
-      <Link href={project.link} target="_blank">
-        <div className="relative aspect-[10/6]">
-          <Image
-            src={project.image}
-            alt={project.name}
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover object-center p-x-2"
-          />
-          {project.inPorcess && (
-            <div className="absolute top-5 left-4 flex items-center gap-2 bg-black/70 px-2 py-1 rounded-md">
-              <div className="h-3 w-3 rounded-full bg-red-500 animate-pulse"></div>
-              <p className="text-white text-md font-semibold">In Progress</p>
-            </div>
-          )}
-        </div>
+    <article className="group relative flex flex-col bg-white/[0.02] border border-white/5 rounded-3xl p-3 transition-all duration-500 hover:bg-white/[0.04]">
+      <Link
+        href={project.link}
+        target="_blank"
+        className="block relative aspect-[16/10] overflow-hidden rounded-2xl bg-black"
+      >
+        <Image
+          src={project.image}
+          alt={project.name}
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
+        />
+        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
+
+        {project.inPorcess && (
+          <div className="absolute top-4 left-4 flex items-center gap-2 bg-black/80 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-full">
+            <div className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse" />
+            <p className="text-white/80 text-[10px] font-bold uppercase tracking-widest">
+              In Progress
+            </p>
+          </div>
+        )}
       </Link>
-      <div id="details" className="p-4 space-y-4">
-        <div className="flex items-center justify-between">
-          <h2 className="font-bold font-plex text-xl md:text-2xl text-white">
-            {project.name}
-          </h2>
-          <Link
-            href={project.link}
-            target="_blank"
-            className="text-gray-400 hover:text-white transition-colors"
-          >
-            <Github height="24" width="24" />
+
+      <div className="pt-6 pb-2 px-2 flex-1 flex flex-col">
+        <div className="flex items-start justify-between gap-4">
+          <Link href={project.link} target="_blank" className="flex-1">
+            <h2 className="text-2xl font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors duration-500 flex items-center gap-2">
+              {project.name}
+              <ArrowUpRight className="w-5 h-5 opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-500" />
+            </h2>
           </Link>
         </div>
-        <p className="font-plex text-gray-300 leading-relaxed text-sm md:text-lg">
+
+        <p className="mt-4 text-white/40 leading-relaxed font-plex text-base line-clamp-3 transition-colors duration-500 flex-1">
           {project.description}
         </p>
-        <div className="py-3">
-          <h3 className="font-plex text-lg md:text-xl text-white font-semibold mb-3">
-            Technologies
-          </h3>
-          <div id="logos" className="flex flex-wrap gap-2 ">
-            {project.technologies.map((item) => (
-              <div className="w-8 h-8" key={item.name}>
-                <item.logo />
+
+        <div className="pt-8 mt-auto">
+          <div className="flex flex-wrap gap-4 items-center">
+            {project.technologies.map((techName) => (
+              <div
+                key={techName}
+                className="flex items-center justify-center transition-all duration-300"
+                title={techName}
+              >
+                <TechIcon name={techName} className="w-6 h-6 text-white/30 group-hover:text-white/80 transition-colors duration-500" />
               </div>
             ))}
           </div>

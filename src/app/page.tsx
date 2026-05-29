@@ -13,14 +13,21 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className=" border  border-(--border) mb-10  md:mx-10 md:mb-10 lg:mx-20 xl:mx-30 3xl:mx-50 4xl:mx-80 lg:mb-20 xl:mb-30 2xl:mb-80  box-border ">
-      <Header />
-      <Hero />
-      {/* <Experience /> */}
-      <GitHubGraph />
-      <Projects />
-      <Aboutme />
-      <Contact />
+    <div className="min-h-screen bg-(--background) selection:bg-white/10 selection:text-white">
+      <div className="max-w-[1440px] mx-auto border-x border-border/50 min-h-screen box-border shadow-2xl relative">
+        <Header />
+        <main>
+          <Hero />
+          <GitHubGraph />
+          <Projects />
+          <Aboutme />
+          <Contact />
+        </main>
+
+        {/* Subtle background glow effects */}
+        <div className="fixed top-0 left-1/4 -z-10 w-[500px] h-[500px] bg-blue-500/10 blur-[120px] rounded-full opacity-50 pointer-events-none" />
+        <div className="fixed bottom-0 right-1/4 -z-10 w-[500px] h-[500px] bg-purple-500/10 blur-[120px] rounded-full opacity-50 pointer-events-none" />
+      </div>
     </div>
   );
 }

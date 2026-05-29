@@ -10,6 +10,8 @@
     "format": "biome format --write"
   },
   "dependencies": {
+    "framer-motion": "^12.40.0",
+    "lucide-react": "^1.17.0",
     "next": "16.1.0",
     "react": "19.2.3",
     "react-activity-calendar": "^3.2.0",

@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import { useEffect, useReducer, useState } from "react";
 import { type Activity, ActivityCalendar } from "react-activity-calendar";
 import OpenSource from "./opensource";
@@ -93,32 +94,51 @@ export default function GitHubGraph() {
     fullData.length === 0 ? [] : fullData.slice(-config.daysToRender);
 
   return (
-    <section className="border-b border-[--border] box-border py-8 px-5 sm:py-10 sm:px-8 md:py-12 md:px-12 lg:py-20 lg:px-20 xl:py-40 xl:px-40">
-      <OpenSource />
+    <section className="relative border-b border-white/5 bg-transparent">
+      <div className="max-w-7xl mx-auto px-6 py-24 md:py-40">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <OpenSource />
+        </motion.div>
 
-      <div className="flex w-full mt-8 justify-center lg:justify-start overflow-hidden">
-        {loading ? (
-          <div className="flex items-center justify-center h-[140px] w-full text-sm text-gray-500 bg-gray-50/50 rounded-lg animate-pulse">
-            Loading contribution graph...
-          </div>
-        ) : (
-          <ActivityCalendar
-            data={visibleData}
-            blockSize={config.blockSize}
-            blockMargin={config.blockMargin}
-            fontSize={config.fontSize}
-            //@ts-expect-error
-            hideTotalCount={true}
-            theme={{
-              light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
-              dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
-            }}
-            style={{
-              maxWidth: "100%",
-              width: "fit-content",
-            }}
-          />
-        )}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+          className="flex w-full mt-20 justify-center lg:justify-start overflow-hidden bg-black border border-white/5 p-8 md:p-12 rounded-[2.5rem] shadow-2xl group transition-all duration-500"
+        >
+          {loading ? (
+            <div className="flex items-center justify-center h-[160px] w-full text-sm text-white/10 font-bold tracking-widest uppercase animate-pulse">
+              Syncing contributions...
+            </div>
+          ) : (
+            <div className="opacity-100 transition-opacity duration-700">
+              <ActivityCalendar
+                data={visibleData}
+                blockSize={config.blockSize}
+                blockMargin={config.blockMargin}
+                fontSize={config.fontSize}
+                //@ts-expect-error
+                hideTotalCount={true}
+                colorScheme="dark"
+                theme={{
+                  light: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
+                  dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
+                }}
+                style={{
+                  maxWidth: "100%",
+                  width: "fit-content",
+                  backgroundColor: "transparent",
+                }}
+              />
+            </div>
+          )}
+        </motion.div>
       </div>
     </section>
   );

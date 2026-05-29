@@ -1,47 +1,84 @@
-import Image from "next/image";
+"use client";
 import { skills } from "@/data/skills";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import TechIcon from "./ui/tech-icon";
 
 export default function Aboutme() {
   return (
-    <section className="border-b border-(--border) box-border">
-      <div className="flex flex-col justify-center items-start space-y-4 py-8 px-5 sm:py-10 sm:px-8 md:py-12 md:px-12 lg:py-20 lg:px-20 xl:py-40 xl:px-40">
-        <h1 className="font-bold font-plex text-4xl md:text-5xl text-white">
-          About me
-        </h1>
-        <div className="flex flex-col  md:flex-row gap-8 py-4  w-full">
-          <div id="image" className="w-full border relative aspect-square">
-            <Image
-              src="/profile.png"
-              alt="Rajesh Potharam"
-              fill
-              sizes="(max-width: 768px) 100vw, 40vw"
-              className="object-cover object-top"
-            />
-          </div>
-          <div
-            id="details"
-            className="w-full md:w-3/5 flex flex-col justify-center space-y-4"
+    <section
+      id="about"
+      className="relative border-b border-white/5 overflow-hidden bg-transparent"
+    >
+      <div className="max-w-7xl mx-auto px-6 py-24 md:py-40">
+        <div className="flex flex-col lg:flex-row gap-20 lg:items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="w-full lg:w-5/12"
           >
-            <h1 className="font-bold font-plex text-3xl md:text-4xl text-white">
-              Rajesh Potharam
-            </h1>
-            <p className="font-plex text-gray-300 leading-relaxed">
-              I build software where efficiency is priority, whether working on
-              low-level components or managing high-volume traffic.
-            </p>
-            <div>
-              <h2 className="font-bold font-plex text-xl md:text-2xl text-white mb-2">
-                Skills
+            <div className="relative aspect-square max-w-lg mx-auto group">
+              <div className="absolute inset-0 bg-purple-500/5 blur-[100px] rounded-full" />
+              <div className="relative rounded-3xl border border-white/10 overflow-hidden aspect-square glow-subtle shadow-2xl transition-all duration-700">
+                <Image
+                  src="/profile.png"
+                  alt="Rajesh Potharam"
+                  fill
+                  className="object-cover object-top scale-105"
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                />
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+            className="w-full lg:w-7/12 space-y-12"
+          >
+            <div className="space-y-6 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/40 text-xs font-bold uppercase tracking-[0.2em]">
+                Background
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
+                Rajesh Potharam
               </h2>
-              <div id="logos" className="flex flex-wrap gap-3">
-                {skills.map((item) => (
-                  <div className="w-8 h-8" key={item.name}>
-                    <item.logo />
-                  </div>
+              <p className="text-white/40 leading-relaxed font-plex text-lg md:text-xl">
+                I build software where efficiency is priority, whether working
+                on low-level components or managing high-volume traffic. My
+                passion lies in solving complex technical challenges and
+                building performant systems that scale.
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              <h4 className="text-sm font-bold uppercase tracking-[0.3em] text-white/20 text-center lg:text-left">
+                Technical Arsenal
+              </h4>
+              <div className="grid grid-cols-6 sm:grid-cols-7 md:grid-cols-9 gap-3 lg:gap-4">
+                {skills.map((item, index) => (
+                  <motion.div
+                    key={item.name}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.02 }}
+                    className="flex items-center justify-center aspect-square transition-all duration-300 hover:scale-125"
+                    title={item.name}
+                  >
+                    <TechIcon
+                      name={item.name}
+                      className="w-8 h-8 text-white/40 hover:text-white transition-colors duration-300"
+                    />
+                  </motion.div>
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

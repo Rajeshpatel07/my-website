@@ -1,32 +1,43 @@
+"use client";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import { contactinfo } from "@/data/contactinfo";
 
 export default function Contact() {
   return (
-    <section className="border-b border-(--border) box-border">
-      <div className="flex flex-col justify-center items-start space-y-4 h-full ">
-        <div id="details" className="flex flex-col md:flex-row w-full h-full">
-          {contactinfo.map((info) => (
-            <div
-              key={info.info}
-              className="border-y border-y-(--border) md:border-x md:border-(--border) h-20 md:h-32 w-full  md:w-1/2 flex items-center justify-center"
-            >
-              {info.name === "mail" ? (
-                <Link href={`mailto:${info.info}`}>
-                  <div className="flex gap-2 items-center font-semibold hover:text-white">
-                    <info.icon className="h-6 w-6" />
-                    <h1 className="md:text-xl font-plex">{info.info}</h1>
-                  </div>
-                </Link>
-              ) : (
-                <div className="flex gap-2 items-center font-semibold hover:text-white">
-                  <info.icon className="h-6 w-6" />
-                  <h1 className="md:text-xl font-plex">{info.info}</h1>
-                </div>
-              )}
+    <section id="contact" className="relative overflow-hidden bg-transparent border-t border-white/5 pt-16 md:pt-24 pb-32 md:pb-56">
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col items-center justify-center text-center space-y-12"
+        >
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-16 pt-8">
+            <div className="space-y-2">
+              <p className="text-sm font-bold uppercase tracking-[0.3em] text-white/20">
+                Location
+              </p>
+              <p className="text-lg md:text-2xl font-medium text-white/70">
+                Hyderabad, India
+              </p>
             </div>
-          ))}
-        </div>
+            
+            <div className="hidden sm:block w-px h-12 bg-white/10" />
+
+            <div className="space-y-2">
+              <p className="text-sm font-bold uppercase tracking-[0.3em] text-white/20">
+                Email
+              </p>
+              <Link 
+                href="mailto:rajeshpotharam77@gmail.com"
+                className="text-lg md:text-2xl font-medium text-white/70 hover:text-white transition-colors duration-300 block"
+              >
+                rajeshcode07@gmail.com
+              </Link>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

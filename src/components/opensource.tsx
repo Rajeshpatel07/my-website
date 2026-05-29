@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import Badge from "./ui/badge";
-import { skills } from "@/data/skills";
 import { fossProjectsInfo } from "@/data/opensourceinfo";
+import Badge from "./ui/badge";
+import TechIcon from "./ui/tech-icon";
 
 export default function OpenSource() {
   return (
     <article>
-      <h2 className="font-bold font-plex text-4xl md:text-5xl text-white mb-8">
+      <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-12">
         Open Source Contributions
       </h2>
 
@@ -32,12 +32,10 @@ export default function OpenSource() {
               Technologies & Tools
             </h3>
             <div className="flex flex-wrap gap-3">
-              {project.tools.map((tool) => (
-                <Badge key={tool.name}>
-                  <div className="w-6 h-6">
-                    <tool.logo />
-                  </div>
-                  <p className="text-white font-semibold">{tool.name}</p>
+              {project.tools.map((toolName) => (
+                <Badge key={toolName}>
+                  <TechIcon name={toolName} className="w-6 h-6" />
+                  <p className="text-white font-semibold">{toolName}</p>
                 </Badge>
               ))}
             </div>
