@@ -1,7 +1,7 @@
 "use client";
-import { skills } from "@/data/skills";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { skills } from "@/data/skills";
 import TechIcon from "./ui/tech-icon";
 
 export default function Aboutme() {

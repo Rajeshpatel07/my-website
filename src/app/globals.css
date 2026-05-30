@@ -54,7 +54,7 @@ body {
   .glow-subtle {
     box-shadow: black;
   }
-  
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }

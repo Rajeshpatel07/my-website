@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { type Activity, ActivityCalendar } from "react-activity-calendar";
 import OpenSource from "./opensource";
 
@@ -31,7 +31,8 @@ export default function GitHubGraph() {
   // Ensure scroll container starts scrolled to the right (most recent)
   useEffect(() => {
     if (!loading && scrollContainerRef.current) {
-      scrollContainerRef.current.scrollLeft = scrollContainerRef.current.scrollWidth;
+      scrollContainerRef.current.scrollLeft =
+        scrollContainerRef.current.scrollWidth;
     }
   }, [loading]);
 
@@ -59,7 +60,7 @@ export default function GitHubGraph() {
               Syncing contributions...
             </div>
           ) : (
-            <div 
+            <div
               ref={scrollContainerRef}
               className="opacity-100 transition-opacity duration-700 w-full overflow-x-auto pb-4 scrollbar-hide cursor-grab active:cursor-grabbing"
             >
@@ -73,8 +74,20 @@ export default function GitHubGraph() {
                   hideTotalCount={true}
                   colorScheme="dark"
                   theme={{
-                    light: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
-                    dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
+                    light: [
+                      "#161b22",
+                      "#0e4429",
+                      "#006d32",
+                      "#26a641",
+                      "#39d353",
+                    ],
+                    dark: [
+                      "#161b22",
+                      "#0e4429",
+                      "#006d32",
+                      "#26a641",
+                      "#39d353",
+                    ],
                   }}
                   style={{
                     maxWidth: "100%",

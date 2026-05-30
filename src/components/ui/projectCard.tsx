@@ -1,5 +1,4 @@
 "use client";
-import { Github } from "./svgs/github";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -67,7 +66,10 @@ export default function ProjectCard({
                 className="flex items-center justify-center transition-all duration-300"
                 title={techName}
               >
-                <TechIcon name={techName} className="w-7 h-7 text-white/30 group-hover:text-white/80 transition-colors duration-500" />
+                <TechIcon
+                  name={techName}
+                  className="w-7 h-7 text-white/30 group-hover:text-white/80 transition-colors duration-500"
+                />
               </div>
             ))}
           </div>

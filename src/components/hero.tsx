@@ -1,10 +1,10 @@
 "use client";
-import { socials } from "@/data/socials";
 import type { Variants } from "framer-motion";
 import { motion } from "framer-motion";
 import { FileText } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { socials } from "@/data/socials";
 import Badge from "./ui/badge";
 import TechIcon from "./ui/tech-icon";
 
@@ -22,13 +22,16 @@ export default function Hero() {
 
   const item: Variants = {
     hidden: { y: 20, opacity: 0 },
-    show: { y: 0, opacity: 1, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    },
   };
 
   return (
     <section className="relative border-b border-white/5 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 py-20 md:py-40 lg:py-56 flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
-        
         {/* Profile Image - Now visible on mobile and placed top on mobile */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -65,9 +68,7 @@ export default function Hero() {
             <span className="text-white">Rajesh</span>
             <span className="text-white/40"> - </span>
             <br className="hidden md:block" />
-            <span className="text-white/40">
-              Full Stack Developer
-            </span>
+            <span className="text-white/40">Full Stack Developer</span>
           </motion.h1>
 
           <motion.p
@@ -115,9 +116,16 @@ export default function Hero() {
             <Link
               href="https://drive.google.com/file/d/1ZGRLI3l3KvhszWKbXr2GFUUoMfUjRl14/view?usp=sharing"
               target="_blank"
-              className="group relative overflow-hidden px-10 py-4 rounded-full border border-white/10 font-semibold transition-all duration-500 hover:border-white/30 w-fit"
+              className="group relative p-[1px] rounded-full overflow-hidden w-fit"
             >
-              <div className="relative z-10 flex items-center gap-3">
+              {/* Rotating Border Layer */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-[-200%] bg-[conic-gradient(from_0deg,transparent_0deg,transparent_300deg,white_360deg)] opacity-40 group-hover:opacity-100 transition-opacity duration-500"
+              />
+              
+              <div className="relative z-10 bg-[#050505] px-10 py-4 rounded-full flex items-center gap-3 transition-colors duration-500 group-hover:bg-white/5">
                 <FileText className="w-5 h-5 group-hover:text-white transition-colors duration-500" />
                 <div className="relative overflow-hidden h-6">
                   <span className="block transition-all duration-500 group-hover:-translate-y-full group-hover:opacity-0">
@@ -128,9 +136,8 @@ export default function Hero() {
                   </span>
                 </div>
               </div>
-              <div className="absolute inset-0 bg-white/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
             </Link>
-            
+
             <ul className="flex items-center gap-8">
               {socials.map((social) => (
                 <li key={social.name}>

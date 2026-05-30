@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Oswald, IBM_Plex_Mono } from "next/font/google";
+import { IBM_Plex_Mono, Oswald } from "next/font/google";
 import "./globals.css";
 import Preloader from "@/components/preloader";
 
@@ -17,8 +17,18 @@ const oswald = Oswald({
 
 export const metadata: Metadata = {
   title: "Rajesh Potharam | Full Stack Developer",
-  description: "Portfolio of Rajesh Potharam, a Full Stack Developer specializing in high-performance applications using TypeScript, React, Next.js, and C++.",
-  keywords: ["Rajesh Potharam", "Full Stack Developer", "Software Engineer", "React", "Next.js", "TypeScript", "C++", "Portfolio"],
+  description:
+    "Portfolio of Rajesh Potharam, a Full Stack Developer specializing in high-performance applications using TypeScript, React, Next.js, and C++.",
+  keywords: [
+    "Rajesh Potharam",
+    "Full Stack Developer",
+    "Software Engineer",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "C++",
+    "Portfolio",
+  ],
   authors: [{ name: "Rajesh Potharam" }],
   creator: "Rajesh Potharam",
   openGraph: {
@@ -26,13 +36,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://rajeshpatel.xyz",
     title: "Rajesh Potharam | Full Stack Developer",
-    description: "Portfolio of Rajesh Potharam, a Full Stack Developer specializing in high-performance applications.",
+    description:
+      "Portfolio of Rajesh Potharam, a Full Stack Developer specializing in high-performance applications.",
     siteName: "Rajesh Potharam Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "Rajesh Potharam | Full Stack Developer",
-    description: "Portfolio of Rajesh Potharam, a Full Stack Developer specializing in high-performance applications.",
+    description:
+      "Portfolio of Rajesh Potharam, a Full Stack Developer specializing in high-performance applications.",
     creator: "@rajeshp04252589",
   },
   icons: {

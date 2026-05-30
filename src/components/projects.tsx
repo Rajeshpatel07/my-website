@@ -1,6 +1,6 @@
 "use client";
-import { projects } from "@/data/projects";
 import { motion } from "framer-motion";
+import { projects } from "@/data/projects";
 import ProjectCard from "./ui/projectCard";
 
 export default function Projects() {
