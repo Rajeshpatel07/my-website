@@ -12,7 +12,7 @@
   --color-border: #27272a;
   --color-border-muted: #18181b;
 
-  --font-plex: var(--font-henken-grotesk);
+  --font-plex: var(--font-oswald);
   --font-mono: var(--font-ibm-plex-mono);
 }
 
@@ -33,7 +33,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-henken-grotesk), Arial, Helvetica, sans-serif;
+  font-family: var(--font-oswald), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
 
@@ -64,7 +64,7 @@ body {
   }
 }
 .font-plex {
-  font-family: var(--font-henken-grotesk);
+  font-family: var(--font-oswald);
 }
 
 .font-mono {

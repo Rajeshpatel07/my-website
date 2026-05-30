@@ -55,7 +55,7 @@ export default function GitHubGraph() {
           className="w-full mt-12 md:mt-20 transition-all duration-500"
         >
           {loading ? (
-            <div className="flex items-center justify-center h-[160px] w-full text-sm text-white/10 font-bold tracking-widest uppercase animate-pulse">
+            <div className="flex items-center justify-center h-[160px] w-full text-sm text-white/10 font-semibold tracking-widest uppercase animate-pulse">
               Syncing contributions...
             </div>
           ) : (

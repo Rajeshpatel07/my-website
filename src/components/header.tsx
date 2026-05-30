@@ -30,7 +30,7 @@ export default function Header() {
             className="group flex items-center gap-2 text-foreground/40 hover:text-foreground transition-all duration-300"
           >
             <Github className="w-6 h-6 group-hover:scale-110 transition-transform" />
-            <span className="hidden md:block text-sm font-bold tracking-widest uppercase">
+            <span className="hidden md:block text-sm font-semibold tracking-widest uppercase">
               Github
             </span>
           </Link>

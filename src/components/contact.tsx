@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative overflow-hidden bg-transparent border-t border-white/5 pt-16 md:pt-24 pb-32 md:pb-56">
+    <section id="contact" className="relative overflow-hidden bg-transparent border-t border-white/5 py-12 md:py-24">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -15,10 +15,10 @@ export default function Contact() {
         >
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-16 pt-8">
             <div className="space-y-2">
-              <p className="text-sm font-bold uppercase tracking-[0.3em] text-white/20">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/20">
                 Location
               </p>
-              <p className="text-lg md:text-2xl font-medium text-white/70">
+              <p className="text-lg md:text-2xl font-normal text-white/70">
                 Hyderabad, India
               </p>
             </div>
@@ -26,12 +26,12 @@ export default function Contact() {
             <div className="hidden sm:block w-px h-12 bg-white/10" />
 
             <div className="space-y-2">
-              <p className="text-sm font-bold uppercase tracking-[0.3em] text-white/20">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/20">
                 Email
               </p>
               <Link 
                 href="mailto:rajeshpotharam77@gmail.com"
-                className="text-lg md:text-2xl font-medium text-white/70 hover:text-white transition-colors duration-300 block"
+                className="text-lg md:text-2xl font-normal text-white/70 hover:text-white transition-colors duration-300 block"
               >
                 rajeshcode07@gmail.com
               </Link>

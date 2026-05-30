@@ -98,7 +98,7 @@ export default function Preloader() {
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-                className="text-white/90 text-sm md:text-lg font-bold tracking-[0.4em] uppercase font-mono text-center"
+                className="text-white/90 text-sm md:text-lg font-semibold tracking-[0.4em] uppercase font-mono text-center"
               >
                 {text}
               </motion.h1>

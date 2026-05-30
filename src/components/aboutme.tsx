@@ -41,10 +41,10 @@ export default function Aboutme() {
             className="w-full lg:w-7/12 space-y-12"
           >
             <div className="space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/40 text-xs font-bold uppercase tracking-[0.2em]">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/40 text-xs font-semibold uppercase tracking-[0.2em]">
                 Background
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
+              <h2 className="text-3xl md:text-5xl font-semibold text-white tracking-tight">
                 Rajesh Potharam
               </h2>
               <p className="text-white/40 leading-relaxed font-plex text-lg md:text-xl">
@@ -56,7 +56,7 @@ export default function Aboutme() {
             </div>
 
             <div className="space-y-8">
-              <h4 className="text-sm font-bold uppercase tracking-[0.3em] text-white/20 text-center lg:text-left">
+              <h4 className="text-sm font-semibold uppercase tracking-[0.3em] text-white/20 text-center lg:text-left">
                 Technical Arsenal
               </h4>
               <div className="flex flex-wrap justify-center lg:justify-start gap-6 md:gap-8">

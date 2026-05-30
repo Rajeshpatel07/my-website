@@ -34,7 +34,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-          className="relative lg:order-2"
+          className="relative hidden md:block lg:order-2"
         >
           <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 xl:w-[28rem] xl:h-[28rem] mx-auto group">
             <div className="absolute inset-0 bg-blue-500/10 blur-[80px] rounded-full" />
@@ -59,7 +59,7 @@ export default function Hero() {
         >
           <motion.h1
             variants={item}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.2]"
+            className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.2]"
           >
             <span className="text-white/40">Hi, I'm </span>
             <span className="text-white">Rajesh</span>
@@ -115,7 +115,7 @@ export default function Hero() {
             <Link
               href="https://drive.google.com/file/d/1ZGRLI3l3KvhszWKbXr2GFUUoMfUjRl14/view?usp=sharing"
               target="_blank"
-              className="group relative overflow-hidden px-10 py-4 rounded-full border border-white/10 font-bold transition-all duration-500 hover:border-white/30 w-fit"
+              className="group relative overflow-hidden px-10 py-4 rounded-full border border-white/10 font-semibold transition-all duration-500 hover:border-white/30 w-fit"
             >
               <div className="relative z-10 flex items-center gap-3">
                 <FileText className="w-5 h-5 group-hover:text-white transition-colors duration-500" />

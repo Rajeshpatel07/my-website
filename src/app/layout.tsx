@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
-import { Hanken_Grotesk, IBM_Plex_Mono } from "next/font/google";
+import { Oswald, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Preloader from "@/components/preloader";
 
 const ibmPlexMono = IBM_Plex_Mono({
   weight: "700",
   variable: "--font-ibm-plex-mono",
+  subsets: ["latin"],
 });
 
-const hankenGrotesk = Hanken_Grotesk({
-  weight: "600",
-  variable: "--font-henken-grotesk",
+const oswald = Oswald({
+  weight: ["400", "600"],
+  subsets: ["latin"],
+  variable: "--font-oswald",
 });
 
 export const metadata: Metadata = {
@@ -46,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${hankenGrotesk.variable} ${ibmPlexMono.variable} antialiased`}
+        className={`${oswald.variable} ${ibmPlexMono.variable} antialiased`}
       >
         <Preloader />
         {children}

@@ -17,7 +17,7 @@ export default function Projects() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="space-y-4 mb-16 md:mb-24"
         >
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white">
+          <h2 className="text-4xl md:text-6xl font-semibold tracking-tight text-white">
             Projects
           </h2>
           <p className="text-foreground/40 max-w-2xl font-plex text-lg md:text-xl leading-relaxed">

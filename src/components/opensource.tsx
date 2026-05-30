@@ -7,7 +7,7 @@ import TechIcon from "./ui/tech-icon";
 export default function OpenSource() {
   return (
     <article>
-      <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-12">
+      <h2 className="text-4xl md:text-6xl font-semibold tracking-tight text-white mb-12">
         Open Source Contributions
       </h2>
 

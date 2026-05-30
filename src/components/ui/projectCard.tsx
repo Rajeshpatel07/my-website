@@ -38,7 +38,7 @@ export default function ProjectCard({
         {project.inPorcess && (
           <div className="absolute top-4 left-4 flex items-center gap-2 bg-black/80 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-full">
             <div className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse" />
-            <p className="text-white/80 text-[10px] font-bold uppercase tracking-widest">
+            <p className="text-white/80 text-[10px] font-semibold uppercase tracking-widest">
               In Progress
             </p>
           </div>
@@ -48,7 +48,7 @@ export default function ProjectCard({
       <div className="pt-6 pb-2 px-2 flex-1 flex flex-col">
         <div className="flex items-start justify-between gap-4">
           <Link href={project.link} target="_blank" className="flex-1">
-            <h2 className="text-2xl font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors duration-500 flex items-center gap-2">
+            <h2 className="text-2xl font-semibold tracking-tight text-white group-hover:text-blue-400 transition-colors duration-500 flex items-center gap-2">
               {project.name}
               <ArrowUpRight className="w-5 h-5 opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-500" />
             </h2>
