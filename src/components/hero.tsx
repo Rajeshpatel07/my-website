@@ -32,6 +32,7 @@ export default function Hero() {
   return (
     <section className="relative border-b border-white/5 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 py-20 md:py-40 lg:py-56 flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+        
         {/* Profile Image - Now visible on mobile and placed top on mobile */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -80,7 +81,7 @@ export default function Hero() {
               <Badge>
                 <TechIcon
                   name="Typescript"
-                  className="w-4 h-4 mr-2 inline-flex"
+                  className="w-5 h-5 mr-2 inline-flex"
                 />
                 TypeScript
               </Badge>
@@ -88,21 +89,21 @@ export default function Hero() {
             ,
             <span className="inline-flex items-baseline mx-1 align-middle">
               <Badge>
-                <TechIcon name="React" className="w-4 h-4 mr-2 inline-flex" />
+                <TechIcon name="React" className="w-5 h-5 mr-2 inline-flex" />
                 React
               </Badge>
             </span>
             and
             <span className="inline-flex items-baseline mx-1 align-middle">
               <Badge>
-                <TechIcon name="Nextjs" className="w-4 h-4 mr-2 inline-flex" />
+                <TechIcon name="Nextjs" className="w-5 h-5 mr-2 inline-flex" />
                 Next.js
               </Badge>
             </span>
             . Currently building low-level systems in
             <span className="inline-flex items-baseline mx-1 align-middle">
               <Badge>
-                <TechIcon name="Cpp" className="w-4 h-4 mr-2 inline-flex" />
+                <TechIcon name="Cpp" className="w-5 h-5 mr-2 inline-flex" />
                 C++
               </Badge>
             </span>
@@ -118,14 +119,14 @@ export default function Hero() {
               target="_blank"
               className="group relative p-[1px] rounded-full overflow-hidden w-fit"
             >
-              {/* Rotating Border Layer */}
+              {/* Rotating Border Layer - Strictly confined to border via parent overflow-hidden and child inset */}
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-[-200%] bg-[conic-gradient(from_0deg,transparent_0deg,transparent_300deg,white_360deg)] opacity-40 group-hover:opacity-100 transition-opacity duration-500"
+                className="absolute inset-[-400%] bg-[conic-gradient(from_0deg,transparent_0deg,transparent_300deg,white_360deg)] opacity-40 group-hover:opacity-100 transition-opacity duration-500"
               />
               
-              <div className="relative z-10 bg-[#050505] px-10 py-4 rounded-full flex items-center gap-3 transition-colors duration-500 group-hover:bg-white/5">
+              <div className="relative z-10 bg-[#09090b] px-10 py-4 rounded-full flex items-center gap-3 transition-colors duration-500">
                 <FileText className="w-5 h-5 group-hover:text-white transition-colors duration-500" />
                 <div className="relative overflow-hidden h-6">
                   <span className="block transition-all duration-500 group-hover:-translate-y-full group-hover:opacity-0">
@@ -144,7 +145,7 @@ export default function Hero() {
                   <Link
                     href={social.url}
                     target="_blank"
-                    className="text-white/30 hover:text-white transition-all duration-300 hover:scale-110"
+                    className="text-white/60 hover:text-white transition-all duration-300 hover:scale-110"
                   >
                     <social.logo className="w-6 h-6 md:w-7 md:h-7" />
                   </Link>

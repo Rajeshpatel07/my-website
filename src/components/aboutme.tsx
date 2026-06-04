@@ -67,7 +67,7 @@ export default function Aboutme() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.02 }}
-                    className="flex items-center justify-center transition-all duration-300 hover:scale-125"
+                    className="flex items-center justify-center transition-all duration-300"
                     title={item.name}
                   >
                     <TechIcon
