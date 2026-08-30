@@ -33,7 +33,7 @@ export default function Contact() {
                 Email
               </p>
               <Link
-                href="mailto:rajeshpotharam77@gmail.com"
+                href="mailto:rajeshcode07@gmail.com"
                 className="text-lg md:text-2xl font-normal text-white/70 hover:text-white transition-colors duration-300 block"
               >
                 rajeshcode07@gmail.com
